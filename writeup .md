@@ -57,7 +57,7 @@ I trained a linear SVM using Sklearn. I separated dataset (8792 images of car, 8
 The code for this step is contained in the 8th and 14th (`process_img()`) code cell of the file called `submit_version_final.py`.
 I just use half of entire image to process, because the detected target is vehicle, which just appear in below part of image. Depends on the distant between front vehicle, using different scale block to slide to search vehilce. overlap 0.5.
 
-![rectangles_all](output_images/all_rectangles)
+![rectangles_all](output_images/all_rectangles.png)
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 I used 1196 images of car and 1125 images of noncar before, but get many false positive. So i try to combine more different feature to classify, such as color feature, but I met some problem in this combination step, and I don't have enough time to fix that, so I try to use more dataset to train my linear SVC classifier. Below shows a example of false positive result with less dataset, and a example of result after using more dataset.  
 
