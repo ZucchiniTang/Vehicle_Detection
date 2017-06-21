@@ -33,15 +33,15 @@ The code for this step is contained in the third code cell of the file called `s
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
-![car_image][output_images/car_example.png]
-![noncar_image][output_images/noncar_example.png]
+![car_image](output_images/car_example.png)
+![noncar_image](output_images/noncar_example.png)
 
 I try different parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `get_hog_feature()` output looks like.
 
 Here is an example using the HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 
-![hog_feature][output_images/Image_HOG.png]
+![hog_feature](output_images/Image_HOG.png)
 
 ####2. Explain how you settled on your final choice of HOG parameters.
 
@@ -57,14 +57,14 @@ I trained a linear SVM using Sklearn. I separated dataset (8792 images of car, 8
 The code for this step is contained in the 8th and 14th (`process_img()`) code cell of the file called `submit_version_final.py`.
 I just use half of entire image to process, because the detected target is vehicle, which just appear in below part of image. Depends on the distant between front vehicle, using different scale block to slide to search vehilce. overlap 0.5.
 
-![rectangles_all][output_images/all_rectangles]
+![rectangles_all](output_images/all_rectangles)
 ####2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 I used 1196 images of car and 1125 images of noncar before, but get many false positive. So i try to combine more different feature to classify, such as color feature, but I met some problem in this combination step, and I don't have enough time to fix that, so I try to use more dataset to train my linear SVC classifier. Below shows a example of false positive result with less dataset, and a example of result after using more dataset.  
 
-![less dataset][output_images/less_dataset.png]
-![heat map of less dataset][output_images/heatmap_of_less_dataset.png]
-![more dataset][output_images/detect_rectangles.png]
-![heat map of more dataset][output_images/heatmap.png]
+![less dataset](output_images/less_dataset.png)
+![heat map of less dataset](output_images/heatmap_of_less_dataset.png)
+![more dataset](output_images/detect_rectangles.png)
+![heat map of more dataset](output_images/heatmap.png)
 ---
 
 ### Video Implementation
@@ -80,13 +80,13 @@ I created a heatmap and then thresholded that map to identify vehicle positions 
 
 ### Here are six frames and their corresponding heatmaps:
 
-![six_heatmaps][output_images/heatmap_6.png]
+![six_heatmaps](output_images/heatmap_6.png)
 
 ### Here is the output of `draw_labeled_bboxes()` on the integrated heatmap from all six frames:
-![six_label][output_images/labels_6.png]
+![six_label](output_images/labels_6.png)
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![six_result][output_images/result_6.png]
+![six_result](output_images/result_6.png)
 
 
 
