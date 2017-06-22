@@ -96,5 +96,9 @@ I created a heatmap and then thresholded that map to identify vehicle positions 
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
+From video, we can see there are false positive detection, and because of coding, the false positive detection will keep in at least 10 flames. And the second problem is that the weight and length of retangles region are not the real weight and length of vehicle, the detected precision of position and size of front vehicle are too low, but I think this shape information is really import.
+
+After reviewer's suggestion, I use `class` to keep result of previously 10 flames , if couldn't detect rectangles at some flame. this method imporve test accuracy, reduce false positive.
+
 I still have some problem in combining features, because of dimension of array. But I don't have enough time to fix this yet, I will fix the problem later to improve test accuracy.
 
